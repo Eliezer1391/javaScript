@@ -5,15 +5,23 @@ let resetButton = document.getElementById('reset');
 let hours = 00; 
 let minutes = 00; 
 let seconds = 00; 
-let miliseconds = 00; 
+let miliseconds = 00;
+let clicked = false;
 
 startButton.addEventListener('click', function () { 
     timer = true; 
-    stopWatch(); 
+    if(!clicked){
+        stopWatch();
+    }
+    clicked = true;
 }); 
   
 stopButton.addEventListener('click', function () { 
     timer = false; 
+    if(clicked){
+        stopWatch();
+    }
+    clicked = false;
 }); 
   
 resetButton.addEventListener('click', function () { 
